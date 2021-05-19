@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Random password generator</h1>
+    <a href="button/">Button</a>
+    <form action="outputExpression/" method="POST">
+     <!-- name allows the server to identify through which name input has been taken    -->
+     {% csrf_token %}  
+     1st number : <input type="text" name="val_1">  
+    2nd number : <input type="text" name="val_2">
+    Exp : <input type="text" name="val_exp">
+    <input type="submit">
+    </form>
+     {% if user.is_authenticated %}
+     <li>Hi {{user.first_name}}</li>
+     <a href="logout/">Logout here!!</a>
+     {% else %}
+     <a href="signup/">Sign Up!!</a> <br>
+     <a href="login/">Login here!!</a> <br>
+     {% endif %}
+</body>
+</html>
